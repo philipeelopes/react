@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import HelloWord from './components/HelloWord'
 
 function App() {
 
@@ -15,12 +15,12 @@ function App() {
 
   return (
     <div className="App">
-    <h1>Ola react</h1>
-    <h2>alterando jsx</h2>
+    <h2>alterando jxs</h2>
     <p>app</p>
     <p>ola {newName}</p>
     <p>soma {soma(1,7)} </p>
     <img src={url} alt="minha imagem" />
+    < HelloWord />
     </div>
   );
 }
