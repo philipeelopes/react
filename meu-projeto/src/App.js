@@ -1,28 +1,30 @@
 import './App.css';
 import HelloWord from './components/HelloWord'
+import SayMyName from './components/SayMyName'
+import Pessoa from './components/Pessoa'
 
 function App() {
 
-  const name ='philipe'
-
-  const newName = name.toLocaleUpperCase()
-
-  function soma (a, b){
-    return a + b
-  }
-
-  const url = 'https://via.placeholder.com/150'
+  const nome = 'maria'
 
   return (
     <div className="App">
-    <h2>alterando jxs</h2>
-    <p>app</p>
-    <p>ola {newName}</p>
-    <p>soma {soma(1,7)} </p>
-    <img src={url} alt="minha imagem" />
-    < HelloWord />
+ 
+   
+   <SayMyName nome="philipe" />
+     <SayMyName nome="lopes" />
+       <SayMyName nome="ana" />
+         <SayMyName nome="canacan" />
+           <SayMyName nome={nome} />
+           <Pessoa 
+           nome="philipe"
+           idade="28"
+           profissao="programador"
+           foto="https://via.placeholder.com/150"
+           />
+
     </div>
-  );
+  )
 }
 
 export default App;
