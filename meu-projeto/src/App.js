@@ -1,9 +1,6 @@
 import './App.css';
-import HelloWord from './components/HelloWord'
-import SayMyName from './components/SayMyName'
-import Pessoa from './components/Pessoa'
-import Frase from './components/Frase';
-import List from './components/List';
+import Evento from './components/Evento';
+import Form from './components/Form';
 
 function App() {
 
@@ -12,24 +9,12 @@ function App() {
   return (
     <div className="App">
       <h1>
-        testando o csss 
+        testando eventos 
       </h1>
- 
-  <Frase/>
-  <Frase/>
-   <SayMyName nome="philipe" />
-     <SayMyName nome="lopes" />
-       <SayMyName nome="ana" />
-         <SayMyName nome="canacan" />
-           <SayMyName nome={nome} />
-           <Pessoa 
-           nome="philipe"
-           idade="20"
-           profissao="programador"
-           foto="https://via.placeholder.com/150"
-           />
-          <List/>
-          
+      <Evento numero="1" />
+         <Evento numero="2" />
+       <Form/>
+
     </div>
   )
 }
