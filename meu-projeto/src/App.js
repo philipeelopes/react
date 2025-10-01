@@ -4,16 +4,16 @@ import Form from './components/Form';
 
 function App() {
 
-  const nome = 'maria'
+  
 
   return (
     <div className="App">
       <h1>
-        testando eventos 
+        Testando eventos 
       </h1>
-      <Evento numero="1" />
-         <Evento numero="2" />
+      <Evento />
        <Form/>
+       
 
     </div>
   )

@@ -1,16 +1,18 @@
 body{
   padding: 50px;
-  background-color: antiquewhite;
+  background-color: rgb(189, 189, 189);
   padding-bottom: 500px;
 
 }
 
 h1{
-  color: blue;
+  color: rgb(70, 70, 70);
+ font-size: 3em;
   
 }
 
 p{
 padding: 10px;
-background-color: aqua;
+background-color: rgb(87, 87, 87);
+color: white;
 }
