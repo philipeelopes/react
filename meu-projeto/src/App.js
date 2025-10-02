@@ -1,18 +1,18 @@
 import './App.css';
-import Condicional from './components/Condicional';
-import Evento from './components/Evento';
-import Form from './components/Form';
+import OutraLista from './components/OutraLista';
+
 
 function App() {
 
-  
+  const meusItens = ['react', 'value', 'angular']
 
   return (
     <div className="App">
       <h1>
-        Rederização 
+        Rederização de listas
       </h1>
-      <Condicional/>
+      <OutraLista itens={meusItens} />
+     
       
        
 
