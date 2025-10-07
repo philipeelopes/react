@@ -14,4 +14,11 @@
     font-size: 1.5em;
     cursor: pointer;
     color: rgb(69, 150, 255);
+       transition: 0.7s;
+}
+
+.social_list svg:hover{
+    transition: 0.7s;
+    transform: scale(2.2);
+    color: rgb(44, 76, 104);
 }
