@@ -4,8 +4,14 @@ import Company from './components/pages/Company'
 import Contact from './components/pages/Contact'
 import NewProject from './components/pages/NewProject'
 
+import Container from './components/layout/Container.js'
+
+
 function App() {
   return (
+
+
+
     <Router>
       <nav>
         <ul>
@@ -16,12 +22,16 @@ function App() {
         </ul>
       </nav>
 
+      <Container>
+        
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/company' element={<Company />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/newproject' element={<NewProject />} />
       </Routes>
+
+        </Container>
 
       <footer>
         <p>Footer</p>
