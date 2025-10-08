@@ -4,6 +4,8 @@ import Company from './components/pages/Company'
 import Contact from './components/pages/Contact'
 import NewProject from './components/pages/NewProject'
 
+
+
 import Container from './components/layout/Container.js'
 
 
@@ -22,7 +24,7 @@ function App() {
         </ul>
       </nav>
 
-      <Container>
+      <Container customClass="min-height">
         
       <Routes>
         <Route path='/' element={<Home />} />
