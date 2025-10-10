@@ -1,0 +1,14 @@
+.btn{
+    background-color: aqua;
+    color: white;
+    padding: 0.5em 1em ;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.39);
+    background-color: #198c94;
+    color: rgb(255, 255, 255);
+}
