@@ -7,9 +7,9 @@ function Select({text, name, options, handleOnChange, value }) {
             <select name={name} id={name}>
             <option>Selecione uma opção</option>
             {options.map((option) => (
-                <potion value={option.id} key={option.id}>
+                <option value={option.id} key={option.id}>
                 {option.name}
-                </potion>
+                </option>
 
             ))}
             </select>
