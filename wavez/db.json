@@ -1,24 +1,44 @@
 {
-    "projects": [],
-    "categories": [
-        {
-            "id": 1,
-            "name": "Infra"
-        },
-        {
-            "id": 2,
-            "name": "Desenvolvimento"
-        },
-        {
-            "id": 3,
-            "name": "Desing"
-        },
-        {
-            "id": 4,
-            "name": "Planejamento"
-        }
-
-
-    ]
+  "projects": [
+    {
+      "id": "5e63",
+      "category_id": "1",
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "afcd",
+      "category_id": "1",
+      "cost": 0,
+      "services": [],
+      "Name": "dfsdf",
+      "Budget": "123123"
+    },
+    {
+      "id": "fd26",
+      "category_id": "1",
+      "cost": 0,
+      "services": [],
+      "Name": "",
+      "Budget": "123123"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Infra"
+    },
+    {
+      "id": "2",
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": "3",
+      "name": "Desing"
+    },
+    {
+      "id": "4",
+      "name": "Planejamento"
+    }
+  ]
 }
-
