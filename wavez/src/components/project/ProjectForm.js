@@ -34,6 +34,7 @@ function ProjectForm({ handleSubmit, btnText, projectData }) {
 
     const submit = (e) => {
         e.preventDefault();
+       // console.log(project);
         handleSubmit(project);
     }
 
@@ -45,7 +46,7 @@ function ProjectForm({ handleSubmit, btnText, projectData }) {
      function handleCategory(e) {
         setProject({ ...project, category:{
             id: e.target.value,
-            name: e.target.options[e.target.selectdIndex].text,
+            name: e.target.options[e.target.selectedIndex].text,
         },
 
         })
@@ -64,6 +65,7 @@ function ProjectForm({ handleSubmit, btnText, projectData }) {
                 name="Name"
                 placeholder="Insira o nome do projeto"
                 handleOnChange={handleChange}
+                
             />
 
             <Input
@@ -72,11 +74,12 @@ function ProjectForm({ handleSubmit, btnText, projectData }) {
                 name="Budget"
                 placeholder="Insira o orçamento total do projeto"
                 handleOnChange={handleChange}
+               
             />
             <Select name="category_id"
                 text="Selecione a categoria"
                 options={categories}
-                handleOnChange={handleChange}
+                handleOnChange={handleCategory}
                 value={project.category ? project.category.id : ''}
             />
 
