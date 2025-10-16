@@ -6,11 +6,11 @@ import styles from './Message.module.css'
 
 function Message({type, msg}){
 
-    conts [visible, setVisible] = useState(false)
+    const [visible, setVisible] = useState(false)
 
     useEffect(() =>{
 
-        if(imsg){
+        if(!msg){
             setVisible(false)
             return
         }
@@ -23,7 +23,7 @@ function Message({type, msg}){
 
         return () => clearTimeout(timer)
 
-    }, [!msg])
+    }, [msg])
 
     return(
         <>
