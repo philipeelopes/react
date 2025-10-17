@@ -252,6 +252,43 @@
       "id": "c2a5",
       "cost": 0,
       "services": []
+    },
+    {
+      "id": "da3a",
+      "Name": "arroz, feijão, massa ",
+      "Budget": "123",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "b51b",
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "a958",
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "2e22",
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "80f9",
+      "Name": "uuio",
+      "Budget": "123",
+      "category": {
+        "id": "Selecione uma opção",
+        "name": "Selecione uma opção"
+      },
+      "cost": 0,
+      "services": []
     }
   ],
   "categories": [
