@@ -1,11 +1,13 @@
 .project_container {
     padding: 2em;
-   
+    width: 100%;
 }
 
 .title_container{
     display: flex;
     align-items: space-between;
+    gap: 78%;
     margin-bottom: 2em;
-
 }
+
+
