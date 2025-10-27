@@ -1,7 +1,7 @@
 import styles from './Project.module.css'
 
 
-
+import Container from '../layout/Container'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
@@ -12,6 +12,7 @@ function Project() {
 
 
     const [project, setProject] = useState({});
+    const [showProjectForm, setShowProjectForm] = useState(false)
 
     useEffect(() => {
         setTimeout(() => {
@@ -26,7 +27,7 @@ function Project() {
 
                 .then((resp) => resp.json())
                 .then((data) => {
-                    console.log('Dados recebidos:', data)
+                    
                     setProject(data)
                    
                 })
@@ -34,9 +35,36 @@ function Project() {
         }, 3000)
     }, [id])
 
+    function toggleProjectForm(){
+        setShowProjectForm(!showProjectForm)
+
+    }
+
     return (<>
         {project.name ? (
-            <p>{project.name}</p>
+           <div>
+            <Container customClass="column">
+            <div>
+                <h1>Projeto: {project.name}</h1>
+                <button onClick={toggleProjectForm}>{!showProjectForm ? 'Editar projeto' : 'Fechar'}
+                </button>
+                {!showProjectForm ? (
+                    <div>
+                        <p><span>Categoria:</span> {project.category.name}</p>
+                        <p>  <span> Total de Orçamento:</span> R${project.budget}  </p>
+                         <p>  <span> Total Utilizado:</span> R${project.wavez}  </p>
+                    </div>
+                ) : (
+                    <div>
+                        <p>Detalhes do projeto</p>
+                    </div>
+                )}
+
+            </div>
+
+
+            </Container>
+           </div>
         ) : (
             <Loading />
         )}
