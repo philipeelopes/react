@@ -1,5 +1,5 @@
 .container{
-    width: 90%;
+    width:90%;
     max-width: 100%;
     display: flex;
     justify-content: space-between;
@@ -16,6 +16,6 @@
 }
 
 .column{
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-start;
 }

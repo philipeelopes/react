@@ -1,0 +1,18 @@
+.project_details{
+    padding: 2em;
+}
+
+.project_details h1,
+.project_details h2,
+.project_details p{
+    margin-bottom: 0.5em;
+
+}
+
+.project_details h1{
+    width: 100%;
+    background-color: #222;
+    color: aqua;
+    padding: 1.4em;
+    
+}

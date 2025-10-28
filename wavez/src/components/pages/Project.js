@@ -42,7 +42,7 @@ function Project() {
 
     return (<>
         {project.name ? (
-           <div>
+           <div className={styles.project_details}>
             <Container customClass="column">
             <div>
                 <h1>Projeto: {project.name}</h1>
