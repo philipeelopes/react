@@ -16,6 +16,14 @@
 }
 
 .column{
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: flex-start;
+}
+
+.fullWidth {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  justify-content: unset;
+  align-items: unset;
 }

@@ -27,44 +27,45 @@ function Project() {
 
                 .then((resp) => resp.json())
                 .then((data) => {
-                    
+
                     setProject(data)
-                   
+
                 })
                 .catch((err) => console.log(err))
-        }, 3000)
+        }, 100)
     }, [id])
 
-    function toggleProjectForm(){
+    function toggleProjectForm() {
         setShowProjectForm(!showProjectForm)
 
     }
 
     return (<>
         {project.name ? (
-           <div className={styles.project_details}>
-            <Container customClass="column">
-            <div>
-                <h1>Projeto: {project.name}</h1>
-                <button onClick={toggleProjectForm}>{!showProjectForm ? 'Editar projeto' : 'Fechar'}
-                </button>
-                {!showProjectForm ? (
-                    <div>
-                        <p><span>Categoria:</span> {project.category.name}</p>
-                        <p>  <span> Total de Orçamento:</span> R${project.budget}  </p>
-                         <p>  <span> Total Utilizado:</span> R${project.wavez}  </p>
-                    </div>
-                ) : (
-                    <div>
-                        <p>Detalhes do projeto</p>
-                    </div>
-                )}
+            <div className={styles.project_details}>
+                <Container customClass="fullWidth">
+                    <div className={styles.details_container}>
+                        <h1>Projeto: {project.name}</h1>
 
+                        {!showProjectForm ? (
+                            <div className={styles.project_info}>
+                                <p><span>Categoria:</span> {project.category.name}</p>
+                                <p>  <span> Total de Orçamento:</span> R${project.budget}  </p>
+                                <p>  <span> Total Utilizado:</span> R${project.wavez}  </p>
+                            </div>
+                        ) : (
+
+                            <div className={styles.project_info}>
+                                <p>Detalhes do projeto</p>
+                            </div>
+                        )}
+                        <button className={styles.btn} onClick={toggleProjectForm}>{!showProjectForm ? 'Editar projeto' : 'Fechar'}
+                        </button>
+                    </div>
+
+
+                </Container>
             </div>
-
-
-            </Container>
-           </div>
         ) : (
             <Loading />
         )}
