@@ -15,6 +15,7 @@ function Project() {
 
     const [project, setProject] = useState({});
     const [showProjectForm, setShowProjectForm] = useState(false)
+    const [showServiceForm, setShowServiceForm] = useState(false)
     const [message, setMessage] = useState()
     const [type, setType] = useState()
 
@@ -40,8 +41,12 @@ function Project() {
     }, [id])
 
     function editPost(project) {
+        setMessage('')
         //budget validation
         if (project.budget < project.wavez) {
+            setMessage('O orçamento não pode ser menor que o custo do projeto!')
+            setType('error')
+            return false
 
         }
         fetch(`http://localhost:5000/projects/${project.id}`, {
@@ -57,6 +62,8 @@ function Project() {
                 setProject(data)
                 setShowProjectForm(false)
                 //menssagem
+                setMessage('Projeto atualizado!')
+                setType('success')
 
 
             })
@@ -68,6 +75,12 @@ function Project() {
         setShowProjectForm(!showProjectForm)
 
     }
+
+     function toggleServiceForm() {
+        setShowServiceForm(!showProjectForm)
+
+    }
+
 
     return (<>
         {project.name ? (
@@ -95,6 +108,12 @@ function Project() {
                             </div>
                         )}
                         <button className={styles.btn} onClick={toggleProjectForm}>{!showProjectForm ? 'Editar projeto' : 'Fechar'}
+                        </button>
+                    </div>
+
+                    <div className={styles.service_form_container}>
+                        <h2>Adicione um serviço</h2>
+                         <button className={styles.btn} onClick={toggleServiceForm}>{!showServiceForm ? 'Adicionar serviço' : 'Fechar'}
                         </button>
                     </div>
 
