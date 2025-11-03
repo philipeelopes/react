@@ -76,8 +76,8 @@ function Project() {
 
     }
 
-     function toggleServiceForm() {
-        setShowServiceForm(!showProjectForm)
+    function toggleServiceForm() {
+        setShowServiceForm(!showServiceForm)
 
     }
 
@@ -86,7 +86,7 @@ function Project() {
         {project.name ? (
             <div className={styles.project_details}>
                 <Container customClass="fullWidth">
-                    {message && <Message type={type} msg={message}/>}
+                    {message && <Message type={type} msg={message} />}
                     <div className={styles.details_container}>
                         <h1>Projeto: {project.name}</h1>
 
@@ -94,7 +94,7 @@ function Project() {
                             <div className={styles.project_info}>
                                 <p><span>Categoria:</span> {project.category.name}</p>
                                 <p>  <span> Total de Orçamento:</span> R${project.budget}  </p>
-                                <p>  <span> Total Utilizado:</span> R${project.wavez}  </p>
+                                <p>  <span> Total Utilizado:</span> R${project.cost}  </p>
                             </div>
                         ) : (
 
@@ -112,10 +112,23 @@ function Project() {
                     </div>
 
                     <div className={styles.service_form_container}>
-                        <h2>Adicione um serviço</h2>
-                         <button className={styles.btn} onClick={toggleServiceForm}>{!showServiceForm ? 'Adicionar serviço' : 'Fechar'}
-                        </button>
+                        <div className={styles.service_header}>
+                            <h2>Adicione um serviço</h2>
+                            <button className={styles.btn} onClick={toggleServiceForm}>
+                                {!showServiceForm ? 'Adicionar serviço' : 'Fechar'}
+                            </button>
+                        </div>
+
+                        {showServiceForm && (
+                            <div className={styles.project_info}>
+                                Formulário do serviço
+                            </div>
+                        )}
                     </div>
+                    <h2>Serviços</h2>
+                    <Container>
+                        <p>Itens de serviços</p>
+                    </Container>
 
 
                 </Container>
