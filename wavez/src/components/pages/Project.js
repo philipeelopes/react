@@ -3,6 +3,7 @@ import styles from './Project.module.css'
 
 import Container from '../layout/Container'
 import ProjectForm from '../project/ProjectForm'
+import ServiceForm from '../service/ServiceForm'
 import Message from '../layout/Message'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -121,12 +122,14 @@ function Project() {
 
                         {showServiceForm && (
                             <div className={styles.project_info}>
-                                Formulário do serviço
+                               
+                                <ServiceForm/>
+                               
                             </div>
                         )}
                     </div>
                     <h2>Serviços</h2>
-                    <Container>
+                    <Container customClass="start">
                         <p>Itens de serviços</p>
                     </Container>
 
