@@ -1,3 +1,5 @@
+import { parse, v4 as uuidv4 } from 'uuid'
+
 import styles from './Project.module.css'
 
 
@@ -74,6 +76,36 @@ function Project() {
 
 
     function createService(project) {
+        //last service
+
+        const lastService = project.services[project.services.length - 1]
+
+        lastService.id = uuidv4()
+
+        const lastServiceCost = lastService.cost
+
+        const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
+
+        //maximum value validation
+
+        if (newCost > parseFloat(project.budget)) {
+            setMessage('Orçamento ultrapassado, verifique o valor do serviço!')
+            setType('error')
+            project.services.pop()
+            return false
+        }
+
+        //add service cost to project total cost
+        project.cost = newCost
+        //update project
+        fetch(`http://localhost:5000/projects/${project.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(project)
+           
+        })
         
     }
 
