@@ -8,9 +8,9 @@ import styles from '../project/ProjectForm.module.css'
 
 
 
-function ServiceForm() {
+function ServiceForm({handleSubmit, BtnText, projectData}) {
 
-    function submit(e) {
+    function submit() {
 
     }
 
@@ -47,11 +47,11 @@ function ServiceForm() {
                 type="text"
                 text="Descrição do Serviço"
                 name="description"
-                placeholder="Escre o serviço"
+                placeholder="Descreva o serviço"
                 handleOnChange={handleChange}
             />
 
-            <SubmitButton text={textBtn} />
+            <SubmitButton text={BtnText} />
         </form>
     )
 
