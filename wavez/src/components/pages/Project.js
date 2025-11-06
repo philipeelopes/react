@@ -46,7 +46,7 @@ function Project() {
     function editPost(project) {
         setMessage('')
         //budget validation
-        if (project.budget < project.wavez) {
+        if (project.budget < project.cost) {
             setMessage('O orçamento não pode ser menor que o custo do projeto!')
             setType('error')
             return false
@@ -76,17 +76,25 @@ function Project() {
 
 
     function createService(project) {
+        setMessage('')
         //last service
 
         const lastService = project.services[project.services.length - 1]
 
         lastService.id = uuidv4()
 
-        const lastServiceCost = lastService.cost
-
-        const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
-
         //maximum value validation
+
+        const lastServiceCost = parseFloat(lastService.cost)
+        if (isNaN(lastServiceCost)) {
+            setMessage('Custo do serviço inválido!')
+            setType('error')
+            project.services.pop()
+            return false
+        }
+
+        const currentCost = parseFloat(project.cost) || 0
+        const newCost = currentCost + lastServiceCost
 
         if (newCost > parseFloat(project.budget)) {
             setMessage('Orçamento ultrapassado, verifique o valor do serviço!')
@@ -104,9 +112,13 @@ function Project() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(project)
-           
-        })
-        
+
+        }).then(resp => resp.json())
+            .then((data) => {
+                console.log(data)
+            })
+            .catch(err => console.log(err))
+
     }
 
 
@@ -160,13 +172,13 @@ function Project() {
 
                         {showServiceForm && (
                             <div className={styles.project_info}>
-                               
+
                                 <ServiceForm
-                                handleSubmit={createService}
-                                btnText="Adicionar Serviço"
-                                projectData={project}
+                                    handleSubmit={createService}
+                                    btnText="Adicionar Serviço"
+                                    projectData={project}
                                 />
-                               
+
                             </div>
                         )}
                     </div>
