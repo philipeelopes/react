@@ -17,6 +17,7 @@ function Project() {
 
 
     const [project, setProject] = useState({});
+    const [services, setServices] = useState({});
     const [showProjectForm, setShowProjectForm] = useState(false)
     const [showServiceForm, setShowServiceForm] = useState(false)
     const [message, setMessage] = useState()
@@ -37,6 +38,7 @@ function Project() {
                 .then((data) => {
 
                     setProject(data)
+                    setServices(data.services)
 
                 })
                 .catch((err) => console.log(err))
@@ -184,7 +186,12 @@ function Project() {
                     </div>
                     <h2>Serviços</h2>
                     <Container customClass="start">
-                        <p>Itens de serviços</p>
+                        {services.length > 0 &&
+                            services.map((service) => (
+
+                            ))
+                        }
+                        {services.length === 0 && <p>Não há serviços cadastrados.</p>}
                     </Container>
 
 

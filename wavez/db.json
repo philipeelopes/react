@@ -598,6 +598,17 @@
           "id": "ccf4e4bb-1a21-472a-b924-889e8be29fe4"
         }
       ]
+    },
+    {
+      "id": "d364",
+      "name": "fazer 205",
+      "budget": "250000",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "cost": 0,
+      "services": []
     }
   ],
   "categories": [
