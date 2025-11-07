@@ -2,22 +2,22 @@ import { parse, v4 as uuidv4 } from 'uuid'
 
 import styles from './Project.module.css'
 
+import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 import Container from '../layout/Container'
 import ProjectForm from '../project/ProjectForm'
 import ServiceForm from '../service/ServiceForm'
 import Message from '../layout/Message'
-import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-
 import Loading from '../layout/Loading'
+import ServiceCard from '../service/ServiceCard'
 
 function Project() {
     const { id } = useParams()
 
 
     const [project, setProject] = useState({});
-    const [services, setServices] = useState({});
+    const [services, setServices] = useState([]);
     const [showProjectForm, setShowProjectForm] = useState(false)
     const [showServiceForm, setShowServiceForm] = useState(false)
     const [message, setMessage] = useState()
@@ -118,8 +118,14 @@ function Project() {
         }).then(resp => resp.json())
             .then((data) => {
                 console.log(data)
+                setShowServiceForm(false)
             })
             .catch(err => console.log(err))
+
+    }
+
+
+    function removeService(id, cost) {
 
     }
 
@@ -188,6 +194,18 @@ function Project() {
                     <Container customClass="start">
                         {services.length > 0 &&
                             services.map((service) => (
+                                <ServiceCard
+                                    id={service.id}
+                                    name={service.name}
+                                    cost={service.cost}
+                                    description={service.description}
+                                    key={service.id}
+                                    handleRemove={removeService}
+
+
+                                />
+
+
 
                             ))
                         }

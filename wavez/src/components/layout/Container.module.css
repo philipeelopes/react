@@ -11,9 +11,13 @@
     min-height: 75vh;
 }
 
-.start{
-    justify-content: flex-start;
+.start {
+  display: flex;
+  flex-wrap: wrap; /* permite quebrar linha se faltar espaço */
+  justify-content: flex-start;
+  gap: 10px; /* espaço entre as caixas */
 }
+
 
 .column{
     flex-direction: column;
