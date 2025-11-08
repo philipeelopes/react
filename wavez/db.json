@@ -26,25 +26,13 @@
         "id": "4",
         "name": "Planejamento"
       },
-      "cost": 124,
+      "cost": 123,
       "services": [
         {
           "name": "philipe",
           "cost": "123",
-          "description": "arrz",
-          "id": "62d8cfbd-1197-4a5d-875c-e8947a1fa91b"
-        },
-        {
-          "name": "novo servico de lavar carro",
-          "id": "4e3585fe-039b-406f-b642-0ddd89bd5581",
-          "cost": "1",
-          "description": "wfdfzx"
-        },
-        {
-          "name": "philipe",
-          "cost": "0",
-          "description": "qweddsa",
-          "id": "1ed6a1f9-eddd-4f08-b5ea-9de2bced90ea"
+          "description": "34243",
+          "id": "9e149b55-713e-4e9b-948b-de9a8b21d577"
         }
       ]
     },
