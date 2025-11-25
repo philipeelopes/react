@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/philipeelopes/react/issues"
   },
-  "homepage": "https://github.com/philipeelopes/react#readme"
+  "homepage": "https://github.com/philipeelopes/react#readme",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }
